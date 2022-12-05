@@ -224,6 +224,26 @@ section {
   padding-bottom: 86px;
 }
 
+/* Sub Banner */
+
+.sub-banner {
+  padding-top: 62px;
+  padding-bottom: 62px;
+  width: 80%;
+  margin: auto;
+}
+
+.sub-banner h2 {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.sub-banner p {
+  text-align: center;
+  color: rgba(40, 61, 59, 0.7);
+  font-size: 1rem;
+}
+
 /* Banner */
 .banner {
   height: calc(100vh - 112px);
@@ -322,6 +342,11 @@ section {
 .buy {
   display: flex;
   justify-content: space-between;
+}
+.facilities .buy-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .buy.resources {
   height: 660px;
@@ -427,6 +452,7 @@ section {
   font-size: 24px;
   line-height: 48px;
   margin-left: 0px;
+  cursor: pointer;
 }
 /* our resources */
 .our-resources ul {
@@ -912,7 +938,7 @@ Footer {
   position: absolute;
   top: 0;
   bottom: 0;
-  z-index: 9;
+  z-index: 111111111111111;
   background-color: #fff;
 }
 
@@ -999,7 +1025,32 @@ Footer {
 .sidebar-icons img:first-child {
   visibility: hidden;
 }
-
+.product-navbar .btn a {
+  color: #854b3c;
+}
+.btn-check:focus + .btn,
+.btn:focus {
+  box-shadow: unset;
+}
+.btn.btn-primary a {
+  color: #fff;
+}
+.btn-check:active + .btn-primary,
+.btn-check:checked + .btn-primary,
+.btn-primary.active,
+.btn-primary:active,
+.show > .btn-primary.dropdown-toggle {
+  background: #854b3c;
+  border-color: #854b3c;
+}
+.btn-check:focus + .btn-primary,
+.btn-primary:focus {
+  background: #854b3c;
+  border-color: #854b3c;
+}
+.btn:focus-visible {
+  outline: 0px;
+}
 /* Responsive */
 @media only screen and (max-width: 1200px) {
   .header-top {
@@ -1010,6 +1061,10 @@ Footer {
   }
   .common-banner h1 {
     width: 90%;
+  }
+  .sub-banner {
+    padding-top: 62px !important;
+    padding-bottom: 62px !important;
   }
   .navbar {
     padding: 10px 60px;
@@ -1226,6 +1281,26 @@ Footer {
     padding: 0;
     text-align: left;
   }
+
+  /* Sub Banner */
+
+  .sub-banner {
+    padding-top: 32px !important;
+    padding-bottom: 32px !important;
+    width: 100%;
+  }
+
+  .sub-banner h2 {
+    font-size: 28px;
+    text-align: left !important;
+  }
+
+  .sub-banner p {
+    font-size: 14px;
+    line-height: 22px;
+    text-align: left !important;
+  }
+
   .btn-primary {
     font-size: 16px;
     width: 100%;
@@ -1273,6 +1348,9 @@ Footer {
   }
   .buy {
     flex-direction: column-reverse;
+  }
+  .facilities.odd {
+    flex-direction: column;
   }
   .buy-right {
     width: 100%;

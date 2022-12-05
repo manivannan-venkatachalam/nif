@@ -68,6 +68,67 @@ $().ready(function () {
     infinite: true,
     arrows: false,
   });
+
+  // about
+  $(".vision-row").slick({
+    dots: false,
+    slidesToShow: 2,
+    infinite: true,
+    arrows: false,
+    responsive: [
+      {
+        breakpoint: 992,
+        settings: {
+          arrows: false,
+          dots: false,
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          arrows: false,
+          dots: true,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  });
+  $(".feature-application-row").slick({
+    dots: false,
+    slidesToShow: 2,
+    infinite: true,
+    arrows: false,
+    responsive: [
+      {
+        breakpoint: 992,
+        settings: {
+          arrows: false,
+          dots: false,
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          arrows: false,
+          dots: true,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  });
+  $(".admin-right").slick({
+    dots: true,
+    slidesToShow: 1,
+    infinite: true,
+    arrows: false,
+    slidesToScroll: 1,
+  });
 });
 
 $().ready(function () {
@@ -86,6 +147,16 @@ $().ready(function () {
       dots: true,
       slidesToShow: 2,
       slidesToScroll: 2,
+      infinite: true,
+      arrows: false,
+    });
+  }
+
+  if (windowsize < 767) {
+    $(".products-cards").slick({
+      dots: true,
+      slidesToShow: 1,
+      slidesToScroll: 1,
       infinite: true,
       arrows: false,
     });
@@ -263,3 +334,30 @@ function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex - 1].style.display = "block";
+  dots[slideIndex - 1].className += " active";
+}
+
+function currentSlide(n) {
+  showSlides((slideIndex = n));
+}
+
+$(".color-head").click(function () {
+  $(".color-head").removeClass("active");
+  $(this).addClass("active");
+});
